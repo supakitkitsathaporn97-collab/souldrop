@@ -1,0 +1,58 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  manifests:
+    name: JSON manifests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Parse marketplace + plugin manifests
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('.claude-plugin/marketplace.json','utf8')); console.log('marketplace.json OK')"
+          node -e "JSON.parse(require('fs').readFileSync('plugins/souldrop/.claude-plugin/plugin.json','utf8')); console.log('plugin.json OK')"
+
+  shell:
+    name: Shell syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: bash -n
+        run: |
+          bash -n install/go.sh
+          bash -n adapters/ollama/souldrop.sh
+          echo "shell syntax OK"
+
+  powershell:
+    name: PowerShell syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: PowerShell parser check
+        shell: pwsh
+        run: |
+          $failed = $false
+          foreach ($f in @('install/go.ps1', 'adapters/ollama/souldrop.ps1')) {
+            $tokens = $null; $errors = $null
+            [System.Management.Automation.Language.Parser]::ParseFile($f, [ref]$tokens, [ref]$errors) | Out-Null
+            if ($errors.Count -gt 0) {
+              $errors | ForEach-Object { Write-Host "::error file=$f::$($_.Message)" }
+              $failed = $true
+            } else {
+              Write-Host "$f OK"
+            }
+          }
+          if ($failed) { exit 1 }
+
+  skills:
+    name: Skill frontmatter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint SKILL.md frontmatter
+        run: node .github/scripts/lint-skills.mjs

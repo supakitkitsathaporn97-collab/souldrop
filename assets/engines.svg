@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" role="img" aria-label="One brain feeding many engines: Claude Code (Pro), Ollama (Free, local), and more engines coming">
+  <title>One brain, many engines</title>
+  <style>
+    text { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
+    .flow { stroke-dasharray: 3 9; animation: flow 1.6s linear infinite; }
+    @keyframes flow { to { stroke-dashoffset: -12; } }
+  </style>
+  <defs>
+    <linearGradient id="e-tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#161A23"/>
+      <stop offset="1" stop-color="#101319"/>
+    </linearGradient>
+    <linearGradient id="e-drop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F2C56B"/>
+      <stop offset="1" stop-color="#D89428"/>
+    </linearGradient>
+    <linearGradient id="e-wire" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E8B04B"/>
+      <stop offset="1" stop-color="#2FD6C3"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="1" y="1" width="958" height="298" rx="20" fill="url(#e-tile)" stroke="#262C3A" stroke-width="2"/>
+
+  <!-- the soul: droplet mark -->
+  <g transform="translate(60,80) scale(1.05)">
+    <path d="M64 18 C57 31 31 61 31 82 a33 33 0 0 0 66 0 C97 61 71 31 64 18 Z" fill="url(#e-drop)"/>
+    <ellipse cx="48" cy="54" rx="5.5" ry="10" fill="#FFFFFF" opacity="0.22" transform="rotate(24 48 54)"/>
+    <path d="M64 60 L69.5 74.5 L84 80 L69.5 85.5 L64 100 L58.5 85.5 L44 80 L58.5 74.5 Z" fill="#2FD6C3"/>
+  </g>
+  <text x="127" y="238" text-anchor="middle" font-size="14" font-weight="600" fill="#E8ECF4">one brain</text>
+  <text x="127" y="258" text-anchor="middle" font-size="12" fill="#8A93A6">plain markdown, yours</text>
+
+  <!-- wires -->
+  <path class="flow" d="M180 138 C 300 118 340 72 468 72"  fill="none" stroke="url(#e-wire)" stroke-width="2" opacity="0.75"/>
+  <path class="flow" d="M188 152 C 300 152 340 150 468 150" fill="none" stroke="url(#e-wire)" stroke-width="2" opacity="0.75"/>
+  <path class="flow" d="M180 166 C 300 186 340 228 468 228" fill="none" stroke="url(#e-wire)" stroke-width="2" opacity="0.75"/>
+
+  <!-- engine: Claude Code (abstract asterisk) -->
+  <circle cx="505" cy="72" r="30" fill="#1A1F2A" stroke="#2A3040" stroke-width="2"/>
+  <g stroke="#E8B04B" stroke-width="6.5" stroke-linecap="round">
+    <line x1="505" y1="56" x2="505" y2="88"/>
+    <line x1="489" y1="72" x2="521" y2="72"/>
+    <line x1="494" y1="61" x2="516" y2="83"/>
+    <line x1="516" y1="61" x2="494" y2="83"/>
+  </g>
+  <text x="560" y="68" font-size="17" font-weight="700" fill="#E8ECF4">Claude Code</text>
+  <text x="560" y="88" font-size="13" fill="#8A93A6">Pro — full skills · auto skill-forge · subagents</text>
+
+  <!-- engine: Ollama (abstract llama silhouette) -->
+  <circle cx="505" cy="150" r="30" fill="#1A1F2A" stroke="#2A3040" stroke-width="2"/>
+  <g transform="translate(505,150)">
+    <path d="M-12 20 L-12 4 Q-12 -4 -6 -6 L-6 -13 Q-6 -19 -1 -19 L1 -23 L4 -19 Q8 -19 8 -13 L8 -11 Q8 -7 3 -6 L3 12 L9 12 L9 20 L2 20 L2 15 L-5 15 L-5 20 Z" fill="#E8ECF4"/>
+    <circle cx="1" cy="-13" r="1.4" fill="#12151C"/>
+  </g>
+  <text x="560" y="146" font-size="17" font-weight="700" fill="#E8ECF4">Ollama (local)</text>
+  <text x="560" y="166" font-size="13" fill="#8A93A6">Free — $0, no account, 100% on your machine</text>
+
+  <!-- engine: more coming -->
+  <circle cx="505" cy="228" r="27" fill="none" stroke="#4A5568" stroke-width="2" stroke-dasharray="5 6"/>
+  <text x="505" y="236" text-anchor="middle" font-size="26" fill="#8A93A6">+</text>
+  <text x="560" y="224" font-size="17" font-weight="700" fill="#8A93A6">More engines</text>
+  <text x="560" y="244" font-size="13" fill="#5C6577">Codex · Antigravity · OpenClaw — coming in v0.5</text>
+
+  <!-- same soul, any engine -->
+  <text x="330" y="272" text-anchor="middle" font-size="12" font-style="italic" fill="#5C6577">same soul → any engine</text>
+</svg>

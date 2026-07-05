@@ -8,6 +8,22 @@ Format: [Keep a Changelog](https://keepachangelog.com/) · Versioning: [SemVer](
 The **SoulDrop** release: rebrand + multi-engine architecture + a free tier.
 "Drop a soul into any machine — your personal AI assistant, fully automatic."
 
+### Presentation & CI (2026-07-05 — README pro redesign, no version bump)
+- **README hero redesign, all 5 languages:** centered logo (dark/light
+  `<picture>` swap), shields.io badge row (CI · version · license · platform ·
+  languages · PRs-welcome), language switcher in the hero, **animated SVG
+  terminal demo** (`assets/demo.svg` — the full install → `/onboard` →
+  skill-forge flow, ~18 s CSS-animated loop that plays right on GitHub),
+  engines illustration, emoji section icons, centered footer. All prose and
+  install URLs unchanged — presentation only.
+- **New self-made SVG assets** in `assets/`: `logo.svg` (+`-dark`/`-light`),
+  `banner.svg`, `demo.svg` (animated), `engines.svg` (animated connectors,
+  abstract engine shapes — no trademarked artwork).
+- **CI:** `.github/workflows/validate.yml` — JSON manifest parse, `bash -n`
+  on shell scripts, PowerShell AST parse on `.ps1`, and a SKILL.md
+  frontmatter lint (`.github/scripts/lint-skills.mjs`). Status badge in
+  every README.
+
 ### Renamed
 - **Project renamed: `claude-easy-install` → `souldrop` (product name: SoulDrop).**
   Marketplace name, plugin name (`nick-starter` → `souldrop`), plugin folder

@@ -1,19 +1,72 @@
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/logo-light.svg">
+  <img src="assets/logo.svg" alt="SoulDrop — a droplet with a spark inside" width="110">
+</picture>
+
 # SoulDrop
+
+**Drop a soul into any machine — your personal AI assistant, fully automatic.**
+<br>
+<sub><i>Thả một linh hồn vào bất kỳ máy nào — trợ lý AI cá nhân của bạn, tự động hoàn toàn.</i></sub>
+
+<br>
+<br>
+
+[![CI](https://img.shields.io/github/actions/workflow/status/supakitkitsathaporn97-collab/souldrop/validate.yml?branch=main&style=flat-square&label=CI&labelColor=20242C)](https://github.com/supakitkitsathaporn97-collab/souldrop/actions/workflows/validate.yml)
+[![Version](https://img.shields.io/badge/version-0.4.0-E8B04B?style=flat-square&labelColor=20242C)](CHANGELOG.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-2FD6C3?style=flat-square&labelColor=20242C)](LICENSE)
+![Platform](https://img.shields.io/badge/platform-Windows%20%C2%B7%20macOS%20%C2%B7%20Linux-4A5568?style=flat-square&labelColor=20242C)
+![Languages](https://img.shields.io/badge/languages-EN%20%C2%B7%20VI%20%C2%B7%20TH%20%C2%B7%20KO%20%C2%B7%20ZH-E8B04B?style=flat-square&labelColor=20242C)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-2FD6C3?style=flat-square&labelColor=20242C)](https://github.com/supakitkitsathaporn97-collab/souldrop/pulls)
+
+<br>
 
 **English** · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md) · [한국어](README.ko.md) · [中文](README.zh.md)
 
-**Drop a soul into any machine — your personal AI assistant, fully automatic.**
-*Thả một linh hồn vào bất kỳ máy nào — trợ lý AI cá nhân của bạn, tự động hoàn toàn.*
+<br>
+
+<img src="assets/demo.svg" alt="Animated demo — one command installs SoulDrop, the /onboard interview runs, and a personal assistant with 4 custom skills is ready" width="780">
+
+</div>
 
 One command. A friendly interview (never a technical question). Out comes an assistant with its own name, personality, long-term memory, and a second brain — running on the engine that fits you, **paid or 100% free**.
 
 > English and Tiếng Việt are the primary supported languages. Thai, Korean, and Chinese are fully supported; other languages work best-effort via the interview's "Other" option.
 
-> 📸 *Screenshots coming soon*
-
 ---
 
-## Choose your engine
+## 🚀 Install — one command
+
+**Windows** — open **PowerShell** (press Start, type "PowerShell", Enter) and paste:
+
+```powershell
+irm https://raw.githubusercontent.com/supakitkitsathaporn97-collab/souldrop/main/install/go.ps1 | iex
+```
+
+**macOS / Linux** — open **Terminal** and paste:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/supakitkitsathaporn97-collab/souldrop/main/install/go.sh | bash
+```
+
+### Then
+
+**Pro engine (Claude):**
+1. Type `claude` and press Enter, log in when the browser opens (paid plan required).
+2. Type `/onboard`, pick your language, and meet your new assistant — it even forges 3–5 custom skills for your profession before saying hello.
+
+**Free engine (local):**
+1. Double-click **SoulDrop** on your Desktop (Windows) or type `souldrop` in a new terminal.
+2. Answer six friendly questions (your name, your work, your goal, its name...) — done. Everything runs on your machine; nothing leaves it.
+
+## 🧠 Choose your engine
+
+<p align="center">
+  <img src="assets/engines.svg" alt="One brain feeding many engines — Claude Code (Pro), Ollama (Free, local), and more coming in v0.5" width="780">
+</p>
 
 SoulDrop separates the **brain** (who your assistant is — plain markdown files you own) from the **engine** (what runs it). Same soul, any engine:
 
@@ -25,44 +78,18 @@ SoulDrop separates the **brain** (who your assistant is — plain markdown files
 
 You don't have to choose anything technical — the installer **detects Claude Code automatically**, and otherwise asks exactly one human question: *Free or Pro?*
 
-## Install — Windows
-
-Open **PowerShell** (press Start, type "PowerShell", Enter) and paste:
-
-```powershell
-irm https://raw.githubusercontent.com/supakitkitsathaporn97-collab/souldrop/main/install/go.ps1 | iex
-```
-
-## Install — macOS / Linux
-
-Open **Terminal** and paste:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/supakitkitsathaporn97-collab/souldrop/main/install/go.sh | bash
-```
-
-## Then
-
-**Pro engine (Claude):**
-1. Type `claude` and press Enter, log in when the browser opens (paid plan required).
-2. Type `/onboard`, pick your language, and meet your new assistant — it even forges 3–5 custom skills for your profession before saying hello.
-
-**Free engine (local):**
-1. Double-click **SoulDrop** on your Desktop (Windows) or type `souldrop` in a new terminal.
-2. Answer six friendly questions (your name, your work, your goal, its name...) — done. Everything runs on your machine; nothing leaves it.
-
-## Requirements
+## 📦 Requirements
 
 - Windows 10 1809+ / macOS 13+ / Ubuntu 20.04+, internet for the install
 - **Free engine:** nothing else. ~2–5 GB disk for the AI model (picked automatically to fit your RAM)
 - **Pro engine:** a paid Claude subscription (Pro, Max, or Team) — [claude.ai](https://claude.ai)
 - **Don't have Claude yet?** Start with a free 7-day Pro trial → [claude.ai/referral/QbA1I722cA](https://claude.ai/referral/QbA1I722cA) *(referral link — supports this project)*
 
-## One brain, many engines
+## 🔁 One brain, many engines
 
 The brain is **plain markdown — engines are interchangeable**: a persona file (who your assistant is), a memory bank (facts it saves, say *"remember ..."* anytime), and a second-brain note vault at `~/second-brain` shared by every engine. You can read, edit, back up, or move every file yourself. Spec: [`brain/`](brain/README.md) · adapter contract for new engines: [`adapters/`](adapters/README.md).
 
-## What's inside the Pro plugin
+## 🧩 What's inside the Pro plugin
 
 | Skill | What it does |
 |---|---|
@@ -79,15 +106,15 @@ The brain is **plain markdown — engines are interchangeable**: a persona file 
 | `/setup-vault` | (Re)creates the second-brain note vault at `~/second-brain` — Obsidian-ready |
 | `obsidian-markdown` · `obsidian-cli` | Write and organize vault notes properly (wikilinks, tags, safe file operations) |
 
-## What the Free engine gives you
+## 🆓 What the Free engine gives you
 
 The `souldrop` chat launcher (Desktop shortcut / terminal command): loads your assistant's soul, streams replies from a local model chosen to fit your computer (16 GB+ RAM → an 8B model, 8–16 GB → 3B, under 8 GB → 1B with an honest "it's basic" note), saves facts when you say *"remember ..."*, and writes the same second brain as the Pro tier. No skill-forge on this tier — small local models aren't reliable skill authors, so the core SoulDrop skills are folded into the persona instead. Upgrade to Pro anytime by re-running the installer; your brain comes with you.
 
-## Your second brain
+## 📔 Your second brain
 
 Onboarding creates a note vault at `~/second-brain` — plain markdown files your assistant reads and writes (daily notes, projects, people, ideas). Open the folder in the free [Obsidian](https://obsidian.md) app ("Open folder as vault") to browse it visually — the Pro installer even tries to install Obsidian for you, and everything still works as plain files without it. The Pro installer also tries an optional "smart memory" upgrade (the open-source [agentmemory](https://github.com/rohitg00/agentmemory) plugin); if it can't, your assistant simply keeps remembering via files.
 
-## FAQ
+## ❓ FAQ
 
 **Is this official Anthropic or Ollama software?**
 No. SoulDrop is an independent starter kit. It installs Claude Code and Ollama only by calling their own official installers, then adds the SoulDrop brain on top. See [NOTICE](NOTICE).
@@ -110,8 +137,18 @@ No. Everything stays on your own machine — `~/.claude/` on Pro, `~/souldrop-br
 **Old links say `claude-easy-install`?**
 Same project — SoulDrop is the new name since v0.4.0. Old GitHub URLs redirect automatically.
 
----
-
-## License
+## 📄 License
 
 MIT — see [LICENSE](LICENSE). Claude Code is Anthropic's software and Ollama is Ollama's, each installed via their official installers; see [NOTICE](NOTICE).
+
+---
+
+<div align="center">
+
+<img src="assets/logo.svg" alt="" width="44">
+
+**SoulDrop** — one brain, any engine.
+
+<sub>MIT © SK Production · <a href="LICENSE">LICENSE</a> · <a href="NOTICE">NOTICE</a></sub>
+
+</div>
