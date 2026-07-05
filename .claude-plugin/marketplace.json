@@ -1,0 +1,25 @@
+{
+  "name": "claude-easy-install",
+  "owner": {
+    "name": "SK Production",
+    "email": "hello@example.com"
+  },
+  "metadata": {
+    "description": "One-command Claude Code setup + a guided interview that builds your own personalized AI assistant (Vietnamese / English)",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "nick-starter",
+      "description": "Starter kit: /onboard interview that writes your personalized assistant (CLAUDE.md + memory), plus core skills for memory, efficiency, and daily notes",
+      "version": "0.1.0",
+      "author": {
+        "name": "SK Production"
+      },
+      "source": "./plugins/nick-starter",
+      "category": "productivity",
+      "tags": ["starter", "onboarding", "assistant", "vietnamese", "beginner"],
+      "keywords": ["onboarding", "persona", "memory", "second-brain", "vietnamese", "starter-kit"]
+    }
+  ]
+}

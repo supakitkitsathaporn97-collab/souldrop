@@ -1,0 +1,16 @@
+NOTICE
+
+This project ("Claude Code Easy Install") is an independent starter kit and is
+not affiliated with, endorsed by, or sponsored by Anthropic.
+
+Claude Code is software owned and distributed by Anthropic, PBC. This project
+does NOT redistribute, bundle, or re-host Claude Code or any Anthropic binary.
+The bootstrap scripts in install/ invoke Anthropic's official, publicly
+documented installer endpoints (https://claude.ai/install.ps1 and
+https://claude.ai/install.sh) exactly as documented by Anthropic.
+
+Using Claude Code requires a Claude account with a paid plan (or an API
+provider), subject to Anthropic's own terms of service.
+
+Everything original in this repository (bootstrap scripts, plugin, skills,
+templates, documentation) is licensed under the MIT License — see LICENSE.
